@@ -1,0 +1,6 @@
+<application>
+  <component name="PathMacrosImpl">
+    <macro name="ANDROID_HOME" value="C:/Users/NessQ1k/AppData/Local/Android/sdk" />
+    <macro name="KOTLIN_BUNDLED" value="C:\Program Files\Android\Android Studio\plugins\Kotlin\kotlinc" />
+  </component>
+</application>
