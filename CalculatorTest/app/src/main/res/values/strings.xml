@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CalculatorTest</string>
+    <string name="this_is_the_first_fragment">This is the first fragment</string>
+
+    <string name="drawer_opened">Opened</string>
+    <string name="drawer_closed">Closed</string>
+
+    <string name="todo">TODO</string>
+    <string name="this_is_the_second_fragment">This is the second fragment</string>
+    <string name="this_is_the_third_fragment">This is the third fragment</string>
+</resources>
