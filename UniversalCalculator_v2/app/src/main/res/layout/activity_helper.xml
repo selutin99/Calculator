@@ -10,6 +10,30 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Чулепа, ты знаешь что делать." />
+        android:gravity="center"
+        android:text="Универсальный калькулятор"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Данное приложение представляет из себя многофункциональный калькулятор, способный выполнять действия инженерного калькулятора, находить производные произвольных функций, решать логарифмические уравнения, вычислять определённый интеграл." />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Для ознакомления с операторами ввода нажмите кнопку ниже:" />
+
+    <Button
+        android:id="@+id/btnHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Перейти"
+        android:textColor="@android:color/background_light" />
 </LinearLayout>
 
