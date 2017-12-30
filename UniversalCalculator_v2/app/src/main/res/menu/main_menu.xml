@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainCalculator"
+        android:title="Калькулятор"/>
+    <item
+        android:id="@+id/derivativeCalculator"
+        android:title="Производные"/>
+    <item
+        android:id="@+id/logariphmCalculator"
+        android:title="Логарифмы"/>
+    <item
+        android:id="@+id/integralCalculator"
+        android:title="Интегралы"/>
+    <item
+        android:id="@+id/helper"
+        android:title="Справка"/>
+</menu>
