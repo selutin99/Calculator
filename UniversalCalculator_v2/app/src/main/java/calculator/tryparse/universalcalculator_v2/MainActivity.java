@@ -1,5 +1,6 @@
 package calculator.tryparse.universalcalculator_v2;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private String expression = "";
     private String text = "";
     private Double result = 0.0;
+    private boolean countOfEquals = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 countOfSymbol = !countOfSymbol;
                 count = 0;
                 break;
+            //TODO NUMBER
             case R.id.btn0:
                 if(!countOfSymbol){
                     e2.setText("");
@@ -176,7 +181,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btnBack:
                 text = e2.getText().toString();
-                if (text.length() > 0) {
+                if
+                        (text.length() > 0) {
                     if (text.endsWith(".")) {
                         count = 0;
                     }
@@ -189,13 +195,13 @@ public class MainActivity extends AppCompatActivity {
 
                         for (int i = a.length - 1; i>= 0; i--) {
                             if (a[i] == ')') counter++;
-                            else if (a[i] == '(') counter --;
+                            else if (a[i] == '(') counter--;
                             else if (a[i] == '.') count =0;
-                            else if (counter == 0) {
-                                pos = i;
-                                break;
+                                else if (counter == 0) {
+                                    pos = i;
+                                    break;
+                                }
                             }
-                        }
 
                         newText = text.substring(0, pos);
                     }
@@ -223,7 +229,8 @@ public class MainActivity extends AppCompatActivity {
                     e2.setText(e2.getText() + "/");
                 break;
             case R.id.btnDot:
-                e2.setText(e2.getText() + ".");
+                if(setDot(e2.getText().toString()))
+                    e2.setText(e2.getText() + ".");
                 break;
             case R.id.btnEquals:
                 if (e2.length() != 0) {
@@ -241,13 +248,15 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
                     result = new ExtendedDoubleEvaluator().evaluate(expression);
-                    if (!evaluator.equals("0.0")) e2.setText(result + "");
+                    if (!evaluator.equals("0.0")) e2.setText(String.valueOf(result));
                 } catch (Exception e) {
                     e2.setText("Ошибка!");
+
                     e1.setText("");
                     expression = "";
                     e.printStackTrace();
                 }
+                countOfEquals = true;
                 countOfSymbol = !countOfSymbol;
                 break;
             case R.id.btnMinus:
@@ -301,22 +310,37 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         }
+        if(countOfEquals){
+            countOfSymbol = true;
+            countOfEquals = !countOfEquals;
+        }
+        count = 0;
+        return true;
+    }
+    private boolean setDot(String s){
+        String[] opr = {"+", "/", "-", "*", "%", "("};
+        for (int i = 0; i < opr.length; i++) {
+            if (s.endsWith(opr[i]) || s.length() == 0 || count == 1) {
+                return false;
+            }
+        }
+        count = 1;
         return true;
     }
     //TODO this function
     /*private void forTxtViews(String op) {
-        if (e2.length() != 0) {
-            String text = e2.getText().toString();
-            e1.setText(e1.getText() + text + op);
-            e2.setText("");
-            count = 0;
+    if (e2.length() != 0) {
+        String text = e2.getText().toString();
+        e1.setText(e1.getText() + text + op);
+        e2.setText("");
+        count = 0;
 
-        } else {
-            String text = e1.getText().toString();
-            if (text.length() > 0) {
-                String newText = text.substring(0, text.length() - 1) + op;
-                e1.setText(newText);
-            }
+    } else {
+        String text = e1.getText().toString();
+        if (text.length() > 0) {
+        String newText = text.substring(0, text.length() - 1) + op;
+        e1.setText(newText);
         }
+       }
     }*/
 }
