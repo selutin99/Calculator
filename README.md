@@ -3,6 +3,6 @@
 <p><i>Используемое ПО:</i> Android Studio 3.0.1</p>
 # Скриншоты программы:
 <p align="center">
-  <img src="https://image.ibb.co/drwRbb/s1.png" width="385" height="250">
-  <img src="https://image.ibb.co/mCiiNG/s2.png" width="385" height="250">
+  <img src="https://image.ibb.co/drwRbb/s1.png" width="185" height="250">
+  <img src="https://image.ibb.co/mCiiNG/s2.png" width="185" height="250">
 </p>
